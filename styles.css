@@ -6,21 +6,24 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ===== BODY (FIX NỀN XANH → ĐEN) ===== */
+/* ===== BODY ===== */
 body {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #d4fc79 0%, #96e6a1 50%, #222 100%);
+  background: linear-gradient(to bottom, #f7fff9, #e9fff3, #d6f5e3, #bdeed5);
 }
 
 /* ===== NAVBAR ===== */
 .navbar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(46, 204, 113, 0.15);
+  backdrop-filter: blur(12px);
 }
 
 /* ===== USER ===== */
@@ -34,7 +37,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #e0e0e0;
+  background: #2ecc71;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,15 +46,11 @@ body {
 }
 
 .avatar i {
-  color: #555;
+  color: white;
 }
 
 .avatar:hover {
-  background: #007bff;
-}
-
-.avatar:hover i {
-  color: #fff;
+  background: #27ae60;
 }
 
 /* ===== MENU ===== */
@@ -63,7 +62,7 @@ body {
 
 .nav-menu a {
   text-decoration: none;
-  color: #333;
+  color: #1a535c;
   font-weight: 600;
   position: relative;
 }
@@ -73,7 +72,7 @@ body {
   position: absolute;
   width: 0;
   height: 2px;
-  background: #007bff;
+  background: #2ecc71;
   left: 0;
   bottom: -5px;
   transition: 0.3s;
@@ -85,8 +84,9 @@ body {
 
 /* Highlight */
 .highlight {
-  background: linear-gradient(45deg, #ff5722, #ff9800);
-  color: white;
+  background: linear-gradient(45deg, #ffd166, #ffb703);
+  color: #1b4332;
+  box-shadow: 0 4px 15px rgba(255, 183, 3, 0.3);
   padding: 6px 12px;
   border-radius: 20px;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .logo img {
-  height: 60px;
+  height: 70px;
 }
 
 /* ===== CONTENT ===== */
@@ -111,6 +111,7 @@ body {
 
 .content h2 {
   font-size: 2.5rem;
+  color: #1a535c;
 }
 
 .content p {
@@ -121,17 +122,29 @@ body {
 /* Button */
 .btn-main {
   margin-top: 15px;
-  padding: 10px 25px;
-  background: #00bcd4;
+  padding: 12px 28px;
+  background: linear-gradient(45deg, #2ecc71, #a8e6cf);
   color: white;
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s ease;
+  box-shadow:
+    0 8px 18px rgba(46, 204, 113, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 28px rgba(46, 204, 113, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 /* ===== FOOTER ===== */
 #footer {
-  background: #222;
+  background: #1b4332;
   color: #fff;
   padding: 40px 5%;
 }
@@ -147,11 +160,11 @@ body {
 }
 
 #footer p {
-  color: #ccc;
+  color: #ddd;
 }
 
 #footer a {
-  color: #ccc;
+  color: #ddd;
   text-decoration: none;
 }
 
@@ -193,4 +206,49 @@ body {
   .follow-us ul {
     justify-content: center;
   }
+}
+
+/* ===== thanh tìm kiếm ===== */
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 30px;
+  overflow: hidden;
+  border: 2px solid #a8e6cf;
+  transition: 0.3s;
+}
+
+/* hover cả khung */
+.search-box:hover {
+  border-color: #2ecc71;
+}
+
+/* input */
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  width: 220px;
+}
+
+/* button */
+
+.search-box button {
+  border: none;
+  background: #2ecc71;
+  color: white;
+  padding: 16px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* hover button */
+
+.search-box button:hover {
+  background: #27ae60;
 }
