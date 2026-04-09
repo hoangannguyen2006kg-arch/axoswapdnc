@@ -19,6 +19,7 @@ body {
   left: 0;
   width: 100%;
   display: flex;
+  z-index: 1000;
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
@@ -123,7 +124,7 @@ body {
 .btn-main {
   margin-top: 15px;
   padding: 12px 28px;
-  background: linear-gradient(45deg, #2ecc71, #a8e6cf);
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
   color: white;
   border: none;
   border-radius: 25px;
@@ -251,4 +252,92 @@ body {
 
 .search-box button:hover {
   background: #27ae60;
+}
+
+/* trang 0 đồng */
+.content2 {
+  display: flex;
+  gap: 30px;
+  padding: 120px 5% 40px;
+}
+.content2 h2 {
+  font-size: 2rem;
+  color: #1a535c;
+}
+/* thanh phân loại */
+.filter-sidebar {
+  width: 260px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 25px;
+  z-index: 10;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(46, 204, 113, 0.15);
+  position: sticky;
+  top: 110px;
+  height: fit-content;
+}
+.filter-sidebar select:hover {
+  border-color: #2ecc71;
+}
+.filter-sidebar label {
+  font-weight: 600;
+  color: #1b4332;
+  display: block;
+  margin-bottom: 8px;
+}
+.filter-sidebar select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid #a8e6cf;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+  background: white;
+}
+.filter-sidebar select:focus {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
+}
+/* danh sách sản phẩm */
+.product-area {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+}
+.product-card {
+  background: white;
+  border-radius: 18px;
+  padding: 15px;
+  text-align: center;
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(46, 204, 113, 0.15);
+  transition: 0.3s;
+}
+.product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.12),
+    0 6px 18px rgba(46, 204, 113, 0.25);
+}
+.product-card h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #1b4332;
+}
+.product-card p {
+  margin-top: 5px;
+  color: #555;
+  font-weight: 600;
 }
