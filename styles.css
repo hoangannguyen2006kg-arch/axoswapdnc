@@ -382,8 +382,11 @@ body {
 }
 /* LABEL */
 .contact-form label,
-.contact-info label {
+.contact-info label,
+.login-form label {
   display: block;
+  text-align: left;
+  margin-top: 10px;
   margin-bottom: 8px;
   font-weight: 600;
   color: var(--text-dark);
@@ -394,13 +397,20 @@ body {
 .contact-form select,
 .contact-info input,
 .contact-info textarea,
-.contact-info select {
+.contact-info select,
+.login-form input,
+.login-form textarea,
+.login-form select,
+.register-form input,
+.register-form textarea,
+.register-form select {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border-radius: 10px;
   border: 2px solid var(--primary-soft);
   transition: 0.3s;
+  text-overflow: ellipsis;
 }
 /* INPUT FOCUS EFFECT */
 .contact-form input:focus,
@@ -408,13 +418,22 @@ body {
 .contact-form select:focus,
 .contact-info input:focus,
 .contact-info textarea:focus,
-.contact-info select:focus {
+.contact-info select:focus,
+.login-form input:focus,
+.login-form textarea:focus,
+.login-form select:focus,
+.register-form input:focus,
+.register-form textarea:focus,
+.register-form select:focus {
+  outline: none;
   border-color: var(--primary-dark);
   box-shadow: 0 0 0 3px var(--shadow-green-light);
 }
 /* TEXTAREA HEIGHT */
 .contact-form textarea,
-.contact-info textarea {
+.contact-info textarea,
+.login-form textarea,
+.register-form textarea {
   resize: vertical;
   min-height: 120px;
 }
@@ -443,7 +462,7 @@ body {
 }
 /* ================= CONTACT ================= */
 .contact-section {
-  padding-top: 120px;
+  padding-top: 20px;
 }
 /* TITLE */
 .contact-title {
@@ -473,7 +492,7 @@ body {
 /* DESCRIPTION */
 .contact-description {
   max-width: 650px;
-  margin: 0 auto 50px;
+  margin: 0 auto 20px;
   text-align: center;
   font-size: 18px;
   line-height: 1.6;
@@ -485,9 +504,18 @@ body {
   gap: 40px;
   padding: 0 5% 60px;
 }
+.contact-container .logo {
+  display: block;
+  margin: 0 auto 0px;
+  text-align: center;
+  height: 80px;
+  width: auto;
+}
 /* FORM + INFO BOX */
 .contact-form,
-.contact-info {
+.contact-info,
+.login-form,
+.register-form {
   flex: 1;
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(12px);
@@ -500,7 +528,9 @@ body {
 }
 /* HOVER EFFECT */
 .contact-form:hover,
-.contact-info:hover {
+.contact-info:hover,
+.login-form:hover,
+.register-form:hover {
   transform: translateY(-6px);
   box-shadow:
     0 20px 40px var(--shadow-black-medium),
@@ -521,54 +551,10 @@ body {
 .contact-info h3 i {
   color: var(--primary);
 }
-/* LABEL */
-.contact-form label {
-  display: block;
-  margin-top: 12px;
-  font-weight: 600;
-}
-/* INPUT */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
-  border-radius: 10px;
-  border: 2px solid var(--primary-soft);
-  transition: 0.3s;
-}
-/* INPUT FOCUS */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: var(--primary-dark);
-  box-shadow: 0 0 0 3px var(--shadow-green-light);
-  outline: none;
-}
 /* TEXTAREA HEIGHT */
 .contact-form textarea {
   resize: vertical;
   min-height: 120px;
-}
-/* BUTTON */
-.contact-form button {
-  margin-top: 20px;
-  padding: 12px 28px;
-  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
-  color: white;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.25s;
-  box-shadow:
-    0 8px 18px var(--shadow-green-medium),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-}
-.contact-form button:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 14px 28px var(--shadow-green-strong),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 /* CONTACT INFO TEXT */
 .contact-info p {
@@ -610,4 +596,86 @@ body {
 .social-links a:hover {
   color: var(--primary-dark);
   transform: scale(1.1);
+}
+/* ================= LOGIN title and register ================= */
+.login-form,
+.register-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-dark);
+}
+.login-form h2 i,
+.register-form h2 i {
+  color: var(--primary);
+}
+.login-form button,
+.register-form button {
+  margin-top: 10px;
+  padding: 12px 28px;
+  background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.25s;
+  box-shadow:
+    0 8px 18px var(--shadow-green-medium),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+.login-form button:hover,
+.register-form button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 28px var(--shadow-green-strong),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.login-form p,
+.register-form p {
+  margin-top: 15px;
+  text-align: center;
+  color: var(--text-gray);
+}
+.login-form p a,
+.register-form p a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.login-form p a:hover,
+.register-form p a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+.login-form,
+.register-form {
+  max-width: 400px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow:
+    0 10px 25px var(--shadow-black-light),
+    0 4px 12px var(--shadow-green-light);
+}
+.forgot-password {
+  text-align: right;
+  margin-top: 10px;
+  display: block;
+}
+.forgot-password a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+.forgot-password a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+.login-button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
